@@ -1118,7 +1118,54 @@ p, h1, h4, h5 {
     margin-top: 15px;
 }
 
-.contact-card-center p,
+.contact-card-center p {
+    position: relative;
+
+    width: fit-content;
+
+    margin-top: 30px;
+    margin-bottom: 16px;
+
+    padding-left: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.contact-card-center p::before {
+    content: "--";
+
+    position: absolute;
+
+    left: -20px;
+
+    opacity: 0;
+
+    color: #7eb3ff;
+
+    transition:
+        opacity 0.3s ease,
+        left 0.3s ease;
+}
+
+.contact-card-center p:hover {
+    color: #7eb3ff;
+
+    padding-left: 12px;
+}
+
+.contact-card-center p:hover::before {
+    opacity: 1;
+
+    left: 0;
+}
+
 .contact-card-right p {
     margin-bottom: 16px;
     color: rgba(255, 255, 255, 0.75);
@@ -1156,6 +1203,43 @@ p, h1, h4, h5 {
     line-height: 1.9;
 }
 
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+
+    padding: 4px;
+
+    border-radius: 6px;
+
+    filter: brightness(1) invert(0);
+
+    object-fit: contain;
+}
+
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+.social-row img {
+    width: 22px;
+    height: 22px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.social-row img:hover {
+    transform: translateY(-4px);
+    opacity: 0.7;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
@@ -1176,4 +1260,11 @@ p, h1, h4, h5 {
         max-width: 100%;
     }
 
+}
+
+.social-icon {
+    width: 26px;
+    height: 26px;
+
+    object-fit: contain;
 }
